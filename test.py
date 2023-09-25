@@ -116,4 +116,4 @@ def calculate_mape(y_true, y_pred):
 
 accuracy=calculate_mape(quote2['Close'],pred_price[0][0])
 #accuracy
-st.text_input('Accuracy of the Model',accuracy)
+
