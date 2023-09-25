@@ -3,7 +3,7 @@ import pandas_datareader as web
 import numpy as np
 import pandas as pd
 import yfinance as yf
-from sklearn.preprocessing import MinMaxScaler
+from scikit-learn.preprocessing import MinMaxScaler
 from keras.models import Sequential
 from keras.layers import Dense,LSTM
 import matplotlib.pyplot as plt
