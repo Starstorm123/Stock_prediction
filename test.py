@@ -15,7 +15,7 @@ ep_list= [1,2,3,4,5,6,7,8,9,10]
 selected_stock=st.selectbox("Select Dataset for Predictions",stocks)
 ep=st.selectbox("Select Number of Epochs for Predictions",ep_list)
 
-df = yf.download(selected_stock, start='2015-01-01', end='2023-09-14');
+df = yf.download(selected_stock, start='2015-01-01', end='2023-09-29');
 df
 
 plt.figure(figsize=(14,3));
@@ -88,7 +88,7 @@ plt.plot(valid[['Close','predictions']])
 plt.legend(['Train','Val','predictions'],loc='lower right')
 plt.show()
 
-quote=yf.download(selected_stock, start='2015-01-01', end='2023-09-15')
+quote=yf.download(selected_stock, start='2015-01-01', end='2023-09-29')
 newdf=quote.filter(['Close'])
 last_60_days=newdf[-60:].values
 last_60_days_scaled=scaler.transform(last_60_days)
@@ -101,7 +101,7 @@ pred_price=scaler.inverse_transform(pred_price)
 print(pred_price)
 st.text_input('Predicted Value',pred_price)
 
-quote2=yf.download(selected_stock, start='2015-01-01', end='2023-09-14')
+quote2=yf.download(selected_stock, start='2015-01-01', end='2023-09-30')
 print(quote2['Close'])
 
 err=quote2['Close']-pred_price[0][0]
